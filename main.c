@@ -7,11 +7,21 @@ int main ()
     int i,j;
     int sum;
 
+    while (1>0)
+    {
+        printf("Enter the rows of the Table A:");
+        scanf("%d",&m);
+        printf("Enter the columns of the Table A (the rows of the matrix X):");
+        scanf("%d",&n);
 
-    printf("Enter the rows of the Table A:");
-    scanf("%d",&m);
-    printf("Enter the columns of the Table A (the rows of the matrix X):");
-    scanf("%d",&n);
+        if (m>0 && n>0)
+        {
+            break;
+        }
+        printf("\nPlease Enter positive values for rows and columns!!\n\n");
+    }
+
+
 
     int A[m][n];
     int X[n][1];
@@ -57,12 +67,13 @@ int main ()
 
     for (i=0; i<m; i++)
     {
+        sum=0;
         for (j=0; j<n; j++)
         {
             sum += A[i][j] * X[j][0];
         }
         Y[i][0] = sum;
-        sum=0;
+
     }
 
     printf("Resulting Table\n");
@@ -71,6 +82,10 @@ int main ()
     {
         printf("|%d|\n",Y[i][0]);
     }
+
+
+
+
 
 
     return 0;
